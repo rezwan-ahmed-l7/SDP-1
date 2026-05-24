@@ -62,16 +62,16 @@ public class Calculator extends Application {
         square.setPrefSize(60, 60);
         root.setPrefSize(60, 60);
 
-        add.setStyle("-fx-font-size: 18; -fx-base: #fe9226;");
-        sub.setStyle("-fx-font-size: 18; -fx-base: #fe9226;");
-        mul.setStyle("-fx-font-size: 18; -fx-base: #fe9226;");
-        div.setStyle("-fx-font-size: 18; -fx-base: #fe9226;");
-        ac.setStyle("-fx-font-size: 18; -fx-base: #df4a4a;");
+        add.setStyle("-fx-font-size: 18; -fx-base: #99fe26;");
+        sub.setStyle("-fx-font-size: 18; -fx-base: #99fe26;");
+        mul.setStyle("-fx-font-size: 18; -fx-base: #99fe26;");
+        div.setStyle("-fx-font-size: 18; -fx-base: #99fe26;");
+        ac.setStyle("-fx-font-size: 18; -fx-base: #e9824f;");
         dot.setStyle("-fx-font-size: 18;");
-        percent.setStyle("-fx-font-size: 18; -fx-base: #fe9226;");
-        square.setStyle("-fx-font-size: 18; -fx-base: #fe9226;");
-        root.setStyle("-fx-font-size: 18; -fx-base: #fe9226;");
-        eq.setStyle("-fx-font-size: 18; -fx-base: #25c4bf;");
+        percent.setStyle("-fx-font-size: 18; -fx-base: #99fe26;");
+        square.setStyle("-fx-font-size: 18; -fx-base: #99fe26;");
+        root.setStyle("-fx-font-size: 18; -fx-base: #99fe26;");
+        eq.setStyle("-fx-font-size: 18; -fx-base: #2e88ff;");
 
         grid.add(numbers[7], 0, 0);
         grid.add(numbers[8], 1, 0);
