@@ -11,217 +11,224 @@ import javafx.stage.Stage;
 
 public class Calculator extends Application {
 
-    double firstNumber = 0;
-    String operator = "";
+    private double firstNumber = 0;
+    private String operator = "";
+    private boolean newCalculation = false;
 
     @Override
     public void start(Stage stage) {
+
+        double WIN_WIDTH = 300;
+        double WIN_HEIGHT = 400;
 
         Image icon = new Image("Calculator.png");
         stage.getIcons().add(icon);
 
         TextField display = new TextField();
         display.setEditable(false);
+        display.setPrefHeight(60);
+        display.setStyle("-fx-font-size: 24; -fx-alignment: right;");
 
         GridPane grid = new GridPane();
-
         grid.setHgap(10);
         grid.setVgap(10);
 
-        Button btn1 = new Button("1");
-        Button btn2 = new Button("2");
-        Button btn3 = new Button("3");
-        Button btn4 = new Button("4");
-        Button btn5 = new Button("5");
-        Button btn6 = new Button("6");
-        Button btn7 = new Button("7");
-        Button btn8 = new Button("8");
-        Button btn9 = new Button("9");
-        Button btn0 = new Button("0");
+        Button[] numbers = new Button[10];
+        for (int i = 0; i <= 9; i++) {
+            numbers[i] = new Button(String.valueOf(i));
+            numbers[i].setPrefSize(60, 60);
+            numbers[i].setStyle("-fx-font-size: 18;");
+        }
 
         Button add = new Button("+");
         Button sub = new Button("-");
         Button mul = new Button("*");
         Button div = new Button("/");
-
-        Button equal = new Button("=");
-        Button clear = new Button("C");
+        Button eq = new Button("=");
+        Button ac = new Button("AC");
         Button dot = new Button(".");
+        Button percent = new Button("%");
+        Button square = new Button("x²");
+        Button root = new Button("√");
 
-        grid.add(btn7, 0, 0);
-        grid.add(btn8, 1, 0);
-        grid.add(btn9, 2, 0);
+        add.setPrefSize(60, 60);
+        sub.setPrefSize(60, 60);
+        mul.setPrefSize(60, 60);
+        div.setPrefSize(60, 60);
+        eq.setPrefSize(60, 60);
+        ac.setPrefSize(60, 60);
+        dot.setPrefSize(60, 60);
+        percent.setPrefSize(60, 60);
+        square.setPrefSize(60, 60);
+        root.setPrefSize(60, 60);
 
-        grid.add(btn4, 0, 1);
-        grid.add(btn5, 1, 1);
-        grid.add(btn6, 2, 1);
+        add.setStyle("-fx-font-size: 18; -fx-base: #fe9226;");
+        sub.setStyle("-fx-font-size: 18; -fx-base: #fe9226;");
+        mul.setStyle("-fx-font-size: 18; -fx-base: #fe9226;");
+        div.setStyle("-fx-font-size: 18; -fx-base: #fe9226;");
+        ac.setStyle("-fx-font-size: 18; -fx-base: #df4a4a;");
+        dot.setStyle("-fx-font-size: 18;");
+        percent.setStyle("-fx-font-size: 18; -fx-base: #fe9226;");
+        square.setStyle("-fx-font-size: 18; -fx-base: #fe9226;");
+        root.setStyle("-fx-font-size: 18; -fx-base: #fe9226;");
+        eq.setStyle("-fx-font-size: 18; -fx-base: #25c4bf;");
 
-        grid.add(btn1, 0, 2);
-        grid.add(btn2, 1, 2);
-        grid.add(btn3, 2, 2);
+        grid.add(numbers[7], 0, 0);
+        grid.add(numbers[8], 1, 0);
+        grid.add(numbers[9], 2, 0);
+        grid.add(div, 3, 0);
 
-        grid.add(btn0, 1, 3);
+        grid.add(numbers[4], 0, 1);
+        grid.add(numbers[5], 1, 1);
+        grid.add(numbers[6], 2, 1);
+        grid.add(mul, 3, 1);
 
-        grid.add(dot, 0, 3);
-        grid.add(equal, 2, 3);
+        grid.add(numbers[1], 0, 2);
+        grid.add(numbers[2], 1, 2);
+        grid.add(numbers[3], 2, 2);
+        grid.add(sub, 3, 2);
 
-        grid.add(add, 3, 0);
-        grid.add(sub, 3, 1);
-        grid.add(mul, 3, 2);
-        grid.add(div, 3, 3);
+        grid.add(numbers[0], 0, 3);
+        grid.add(dot, 1, 3);
+        grid.add(percent, 2, 3);
+        grid.add(add, 3, 3);
 
-        grid.add(clear, 0, 4);
+        grid.add(square, 0, 4);
+        grid.add(root, 1, 4);
+        grid.add(ac, 2, 4);
+        grid.add(eq, 3, 4);
 
-        btn1.setOnAction(e -> {
-            display.setText(display.getText() + "1");
-        });
-
-        btn2.setOnAction(e -> {
-            display.setText(display.getText() + "2");
-        });
-
-        btn3.setOnAction(e -> {
-            display.setText(display.getText() + "3");
-        });
-
-        btn4.setOnAction(e -> {
-            display.setText(display.getText() + "4");
-        });
-
-        btn5.setOnAction(e -> {
-            display.setText(display.getText() + "5");
-        });
-
-        btn6.setOnAction(e -> {
-            display.setText(display.getText() + "6");
-        });
-
-        btn7.setOnAction(e -> {
-            display.setText(display.getText() + "7");
-        });
-
-        btn8.setOnAction(e -> {
-            display.setText(display.getText() + "8");
-        });
-
-        btn9.setOnAction(e -> {
-            display.setText(display.getText() + "9");
-        });
-
-        btn0.setOnAction(e -> {
-            display.setText(display.getText() + "0");
-        });
+        for (int i = 0; i <= 9; i++) {
+            int digit = i;
+            numbers[i].setOnAction(e -> {
+                if (newCalculation) {
+                    display.clear();
+                    newCalculation = false;
+                }
+                display.setText(display.getText() + digit);
+            });
+        }
 
         dot.setOnAction(e -> {
-
+            if (newCalculation) {
+                display.clear();
+                newCalculation = false;
+            }
             if (!display.getText().contains(".")) {
                 display.setText(display.getText() + ".");
             }
-
         });
 
-        add.setOnAction(e -> {
+        add.setOnAction(e -> setOperator(display, "+"));
+        sub.setOnAction(e -> setOperator(display, "-"));
+        mul.setOnAction(e -> setOperator(display, "*"));
+        div.setOnAction(e -> setOperator(display, "/"));
 
-            firstNumber = Double.parseDouble(display.getText());
-            operator = "+";
-            display.clear();
-
-        });
-
-        sub.setOnAction(e -> {
-
-            firstNumber = Double.parseDouble(display.getText());
-            operator = "-";
-            display.clear();
-
-        });
-
-        mul.setOnAction(e -> {
-
-            firstNumber = Double.parseDouble(display.getText());
-            operator = "*";
-            display.clear();
-
-        });
-
-        div.setOnAction(e -> {
-
-            firstNumber = Double.parseDouble(display.getText());
-            operator = "/";
-            display.clear();
-
-        });
-
-        equal.setOnAction(e -> {
-
-            double secondNumber = Double.parseDouble(display.getText());
-
-            double result = 0;
-
-            if (operator.equals("+")) {
-
-                result = firstNumber + secondNumber;
-
+        percent.setOnAction(e -> {
+            try {
+                double currentValue = Double.parseDouble(display.getText());
+                double percentValue = currentValue / 100;
+                display.setText(String.valueOf(percentValue));
+                newCalculation = true;
+            } catch (NumberFormatException ex) {
+                display.setText("Error");
             }
+        });
 
-            else if (operator.equals("-")) {
-
-                result = firstNumber - secondNumber;
-
+        square.setOnAction(e -> {
+            try {
+                double currentValue = Double.parseDouble(display.getText());
+                double squareValue = currentValue * currentValue;
+                if (squareValue == (long) squareValue) {
+                    display.setText(String.valueOf((long) squareValue));
+                } else {
+                    display.setText(String.valueOf(squareValue));
+                }
+                newCalculation = true;
+            } catch (NumberFormatException ex) {
+                display.setText("Error");
             }
+        });
 
-            else if (operator.equals("*")) {
-
-                result = firstNumber * secondNumber;
-
-            }
-
-            else if (operator.equals("/")) {
-
-                if (secondNumber == 0) {
-
+        root.setOnAction(e -> {
+            try {
+                double currentValue = Double.parseDouble(display.getText());
+                if (currentValue < 0) {
                     display.setText("Error");
-                    return;
+                } else {
+                    double rootValue = Math.sqrt(currentValue);
+                    if (rootValue == (long) rootValue) {
+                        display.setText(String.valueOf((long) rootValue));
+                    } else {
+                        display.setText(String.valueOf(rootValue));
+                    }
+                    newCalculation = true;
+                }
+            } catch (NumberFormatException ex) {
+                display.setText("Error");
+            }
+        });
 
+        eq.setOnAction(e -> {
+            try {
+                double secondNumber = Double.parseDouble(display.getText());
+                double result = 0;
+
+                if (operator.equals("+")) {
+                    result = firstNumber + secondNumber;
+                } else if (operator.equals("-")) {
+                    result = firstNumber - secondNumber;
+                } else if (operator.equals("*")) {
+                    result = firstNumber * secondNumber;
+                } else if (operator.equals("/")) {
+                    if (secondNumber == 0) {
+                        display.setText("Error");
+                        return;
+                    }
+                    result = firstNumber / secondNumber;
                 }
 
-                result = firstNumber / secondNumber;
-
+                if (result == (long) result) {
+                    display.setText(String.valueOf((long) result));
+                } else {
+                    display.setText(String.valueOf(result));
+                }
+                newCalculation = true;
+                operator = "";
+            } catch (NumberFormatException ex) {
+                display.setText("Error");
             }
-
-            display.setText(String.valueOf(result));
-
         });
 
-        clear.setOnAction(e -> {
-
+        ac.setOnAction(e -> {
             display.clear();
-
             firstNumber = 0;
             operator = "";
-
+            newCalculation = false;
         });
 
-        VBox root = new VBox();
+        VBox rootLayout = new VBox(10, display, grid);
+        rootLayout.setStyle("-fx-padding: 15; -fx-background-color: #000000;");
 
-        root.setSpacing(10);
-
-        root.getChildren().addAll(display, grid);
-
-        Scene scene = new Scene(root, 300, 300);
-
+        Scene scene = new Scene(rootLayout, WIN_WIDTH, WIN_HEIGHT);
         stage.setTitle("Calculator");
-
         stage.setScene(scene);
-
+        stage.setResizable(false);
         stage.show();
+    }
 
+    private void setOperator(TextField display, String op) {
+        try {
+            firstNumber = Double.parseDouble(display.getText());
+            operator = op;
+            display.clear();
+            newCalculation = false;
+        } catch (NumberFormatException e) {
+            display.setText("Error");
+        }
     }
 
     public static void main(String[] args) {
-
         launch();
-
     }
-
 }
