@@ -1,0 +1,1 @@
+Basic Software Development Project codes that I've learned on my journey of BSc Engg in CSE using Java and JavaFX are here with different projects, Soon I'll be ctrating a rew repo with proper codes and delete this reo after work, for organaization purpose
