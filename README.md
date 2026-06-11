@@ -1,6 +1,8 @@
-# Modern JavaFX To-Do List App
+# Software Development Fundamentals
 
 <p align="center">
+
+  <img src="https://img.shields.io/badge/Software%20Development%20Project-000000?style=for-the-badge" />
 
   <img src="https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white" />
 
@@ -11,163 +13,90 @@
 </p>
 
 <p align="center">
-  A modern Desktop To-Do List Application built using <b>Java</b> and <b>JavaFX</b> for my Software Development Project Course.
+  A collection of JavaFX and GUI development practice codes for Software Development Project (SDP) Sessional.
 </p>
 
 ---
 
-# About The Project
+# About The Repository
 
-This project was developed to practice GUI development, event-driven programming, and object-oriented programming concepts using Java and JavaFX.
+This repository contains all the lab works, assignments, projects, and practice codes from my SDP Sessional course focusing on **JavaFX**. 
 
-The application provides a simple and intuitive task management system that allows users to organize, manage, and track daily activities through a clean graphical interface.
-
----
-
-# Features
-
-* Add new tasks
-* Update existing tasks
-* Delete tasks
-* Manage daily task lists
-* Responsive JavaFX interface
-* Clean and user-friendly design
+The main goal is to learn modern GUI (Graphical User Interface) development in Java using JavaFX, following proper software development practices, clean code principles, and object-oriented design.
 
 ---
 
-# Screenshot
+# Topics Covered
 
-<p align="center">
-
-  <!-- Add your application screenshot here -->
-
-  <img width="900" alt="To-Do List App Screenshot" src="YOUR_SCREENSHOT_LINK_HERE" />
-
-</p>
+* JavaFX Basics & Setup
+* Scene Builder & FXML
+* UI Controls (Buttons, TextFields, Labels, ComboBox, etc.)
+* Layout Management (VBox, HBox, GridPane, BorderPane, AnchorPane)
+* Event Handling
+* CSS Styling for JavaFX
+* Data Binding & Properties
+* Multiple Scenes & Navigation
+* File Handling with JavaFX
+* Mini Desktop Applications
 
 ---
 
-# Concepts Used
+# Concepts Practiced
 
-* Object-Oriented Programming (OOP)
+* Object-Oriented Programming (OOP) in GUI Context
 * Event-Driven Programming
-* JavaFX GUI Development
-* Maven Dependency Management
-* Application UI Structuring
-* User Interaction Handling
+* MVC (Model-View-Controller) Pattern
+* Separation of Concerns using FXML
+* Responsive UI Design
+* Clean Code & Proper Project Structure
+* JavaFX Application Lifecycle
 
 ---
 
-# Challenges Faced
+# Tools & Technologies Used
 
-* Managing task data efficiently
-* Handling user interactions and events
-* Designing an intuitive user interface
-* Maintaining application responsiveness
-* Organizing application logic effectively
-
----
-
-# Language & Tools
-
-| Technology | Purpose                       |
-| ---------- | ----------------------------- |
-| Java       | Core Programming Language     |
-| JavaFX     | GUI Development               |
-| Maven      | Build & Dependency Management |
-| VS Code    | Development Environment       |
-
----
-
-# Getting Started
-
-## Prerequisites
-
-Before running this project, make sure you have installed:
-
-* Java JDK 17 or later
-* Maven
-* JavaFX SDK
-* VS Code or any Java-supported IDE
-
----
-
-# Installation & Run
-
-## 1. Clone the Repository
-
-```bash
-git clone https://github.com/rezwanahmedtorabee-source/Software-Development-Project-1.git
-```
-
-## 2. Open the Project
-
-Open the project folder using VS Code or your preferred IDE.
-
-## 3. Install Dependencies
-
-```bash
-mvn clean install
-```
-
-## 4. Run the Application
-
-```bash
-mvn javafx:run
-```
-
----
-
-# Project Structure
-
-```bash
-to-do-list-app/
-│
-├── src/
-│   └── main/
-│       ├── java/
-│       ├── resources/
-│
-├── target/
-│
-├── .gitignore
-├── pom.xml
-├── LICENSE
-└── README.md
-```
+| Technology       | Purpose                              |
+|------------------|--------------------------------------|
+| Java             | Core Programming Language            |
+| JavaFX           | GUI Framework                        |
+| Scene Builder    | Drag & Drop UI Design                |
+| VS Code          | Development Environment              |
+| Maven / Gradle   | Build Automation                     |
+| Git & GitHub     | Version Control                      |
 
 ---
 
 # Learning Outcomes
 
-This project helped me improve my understanding of:
+Through this SDP Sessional, I gained practical knowledge of:
 
-* JavaFX UI Design
-* Event Handling
-* Object-Oriented Programming
-* GUI Application Structure
-* Maven Project Management
-* User-Centered Application Design
-* Debugging & Problem Solving
+* Building desktop applications using JavaFX
+* Modern GUI development techniques
+* Event handling and user interaction
+* Structuring large JavaFX projects
+* Styling applications with CSS
+* Software development best practices
 
 ---
 
-# Future Improvements
+# Projects Included
 
-* Task Categories
-* Due Date Support
-* Dark Mode Support
+- Calculator
+- To Do List
+- Department-Based Study Planner
 
 ---
 
 # Author
 
 ### Rezwan Ahmed
-
-B.Sc. Engg. in CSE Student | Aspiring Software Developer & Learner
+B.Sc Engg in CSE Student | Aspiring Software Engineer & Learner
 
 ---
 
 # Support
 
-If you found this project useful, consider giving it a ⭐ on GitHub.
+🌱 This repository is part of my learning journey as a CSE student. 
+The codes, assignments, and reports are shared for educational purposes and may be useful for students who are learning similar concepts.
+
+If you find this repository helpful, please give it a ⭐ on GitHub.
