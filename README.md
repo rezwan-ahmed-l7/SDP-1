@@ -26,6 +26,7 @@ The main goal is to learn modern GUI (Graphical User Interface) development in J
 
 # Topics Covered
 
+* Markdown
 * JavaFX Basics & Setup
 * Scene Builder & FXML
 * UI Controls (Buttons, TextFields, Labels, ComboBox, etc.)
